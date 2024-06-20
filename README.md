@@ -109,3 +109,36 @@ This is about the fundamental concepts of Asymptonic Notation.
 Lets move on to SORTING Concept before we dig deep into Data Structures.
 
 Most Common sorting Algorithms are Bubble sort, insertion sort, Selection sort, Merge sort, Quick Sort, Heap sort.
+
+BUBBLE SORT:
+
+Bubble sort goes through the array of numbers, and looks at each pair of adjacent numbers. Bubble sort will then place the lower number on the left, towards the beginning of the array, and the higher number on the right, towards the end. This process is repeated and bubble sort will continue to loop through the array until no swaps are made, thus leaving a sorted array.
+
+Code is available in java in Sortiing Algorithms folder.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
