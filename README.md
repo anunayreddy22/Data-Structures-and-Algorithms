@@ -104,6 +104,8 @@ Example: Algorithms that generate all permutations of a string.
 
 This is about the fundamental concepts of Asymptonic Notation.
 
-I Will add the Big O() cheat sheet in the file name cheat sheet.
 
 
+Lets move on to SORTING Concept before we dig deep into Data Structures.
+
+Most Common sorting Algorithms are Bubble sort, insertion sort, Selection sort, Merge sort, Quick Sort, Heap sort.
