@@ -104,6 +104,6 @@ Example: Algorithms that generate all permutations of a string.
 
 This is about the fundamental concepts of Asymptonic Notation.
 
-I Will add the Big O() cheat cheet 
+I Will add the Big O() cheat sheet in the file name cheat sheet.
 
 
