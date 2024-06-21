@@ -112,9 +112,25 @@ Most Common sorting Algorithms are Bubble sort, insertion sort, Selection sort, 
 
 BUBBLE SORT:
 
-Bubble sort goes through the array of numbers, and looks at each pair of adjacent numbers. Bubble sort will then place the lower number on the left, towards the beginning of the array, and the higher number on the right, towards the end. This process is repeated and bubble sort will continue to loop through the array until no swaps are made, thus leaving a sorted array.
+Bubble sort goes through the array of numbers, and looks at each pair of adjacent numbers. Bubble sort will then place the lower number on the left, towards the beginning of the array, and the higher number on the right, towards the end. This process is repeated and bubble sort will continue to loop through the array until no swaps are made, thus leaving a sorted array. In every step the highest will be moved to right most position.
 
-Code is available in java in Sortiing Algorithms folder.
+Bubble sort is Slow
+
+Worst case time complexity is O(n^2)
+Code is available in java in SrtingAlgorithms folder.
+
+SELECTION SORT:
+
+The selection sort algorithm sorts an array by repeatedly finding the minimum element (considering ascending order) from the unsorted part and putting it at the beginning.
+
+Selection sort is slow
+Worst case time complexity is O(n^2).
+
+INSERTION SORT:
+
+
+
+
 
 
 
