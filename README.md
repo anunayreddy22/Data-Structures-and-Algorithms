@@ -147,6 +147,27 @@ Worst case time complexity is just O(nlogn).
 QUICK SORT:
 
 
+First select a pivot number in the array,
+Then sorting the other numbers by placing them before or after the pivot number respectively.
+At this point, the pivot number is in the correct location, and the two groups of numbers (one on each side of the pivot number) still need to be sorted.
+New pivot numbers are then chosen within the remaining subsets, and this process is repeated until no swaps are made.
+
+Worst-case time complexity for quicksort is O(n²), although this is an algorithm that rarely falls into its worst-case performance, especially with minor amounts of customization. Typically the Big-O for quicksort is O(n log n). However, a worst case of O(n²) is a knock against it.
+
+
+
+HEAP SORT:
+
+
+Heapsort is, at its core, an upgraded version of selection sort. They are similar because heapsort breaks down the input data into two groups, sorted and unsorted, and builds the sorted group one number at a time.
+
+Where they differ, is where heapsort uses, a heap, to build the unsorted group so its not blindly finding each number, one at a time. Heapsort adds the largest number from the unsorted group to the sorted group, then rebuilds the heap and repeats the process, adding the highest number to the sorted group.
+
+
+Heapsort is yet another powerful worst-case O(n log n) algorithm. Meaning, at worst, it still outperforms all the simple algorithms and quicksort. That being said, heapsort is not a stable sort so choose wisely.
+
+Heapsort also uses a fixed amount of auxiliary space to do the sorting, which is a big plus. Merge sort on the, on the other hand, uses more auxiliary space when there is more data.
+
 
 
 
