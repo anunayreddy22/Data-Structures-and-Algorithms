@@ -128,6 +128,11 @@ Worst case time complexity is O(n^2).
 
 INSERTION SORT:
 
+Insertion sort works by building the final, sorted array one item at a time. The algorithm will iterate through the initial array, remove one element, and place it in its proper place as a part of the sorted list.
+
+Insertion sort is also slow but mostly used among remaining quadratic time ones i.e. Bubble selection.
+Worst Case time complexity is O(n^2).
+
 
 
 
