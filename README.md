@@ -134,6 +134,20 @@ Insertion sort is also slow but mostly used among remaining quadratic time ones 
 Worst Case time complexity is O(n^2).
 
 
+MERGE SORT:
+
+Merge sort is  known as a Divide and Conquer Algorithm
+
+Merge sort operates by first breaking an array into its individual components. It then ‘pairs up’ an individual with another, putting them into their proper place (sorted) with reference to each other. Merge sort then continues to pair up each sublist of numbers and sort them in the process. This is continued until there is just one list remaining — the sorted array
+
+Powerful sorting lgorithm
+Worst case time complexity is just O(nlogn).
+
+
+QUICK SORT:
+
+
+
 
 
 
