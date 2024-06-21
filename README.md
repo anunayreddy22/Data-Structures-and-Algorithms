@@ -170,7 +170,12 @@ Heapsort also uses a fixed amount of auxiliary space to do the sorting, which is
 
 
 
+SEARCHING
 
+
+Linear search and Binary Search:
+
+When we try to find an element in an array it takes O(n) time. but we can do that in O(log n) i.e Binary Search in this we break the array into two halves and then search in that half so like this it takes O(log n) time but there is also a catch for this i.e. the Array should be sorted before doing Binary search. 
 
 
 
