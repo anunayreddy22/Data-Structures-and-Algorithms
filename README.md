@@ -1,4 +1,4 @@
-# Data-Structures-and-Algorithms
+# Data-Structures-and-Algorithms Study Guide
 Data Structures Concepts and problems topic wise problems in Leet code 
 
 
