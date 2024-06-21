@@ -8,9 +8,8 @@ public class HeapSortUsingSTL {
 	// Function to perform the heap sort
 	public static void heapSort(int[] arr)
 	{
-		PriorityQueue<Integer> maxHeap
-			= new PriorityQueue<>(
-				Collections.reverseOrder());
+		PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+		// Remove the top element of the max heap and place it at the end of the array.
 		for (int i = 0; i < arr.length; i++) {
 			maxHeap.offer(arr[i]);
 		}
@@ -22,11 +21,15 @@ public class HeapSortUsingSTL {
 	// Driver Code
 	public static void main(String[] args)
 	{
-		int[] arr = { 60, 20, 40, 70, 30, 10 };
-		System.out.println("Before Sorting: "
-						+ Arrays.toString(arr));
+		Scanner sc = new Scanner(System.in);
+		int n = sc,nextInt();
+		int[] arr = new int[n];
+		for(int i=0;i<n;i++){
+			arr[i] = sc.nextInt();
+     		}
 		heapSort(arr);
-		System.out.println("After Sorting: "
-						+ Arrays.toString(arr));
+	  	for(int i=0;i<n;i++){
+     		 System.out.print(arr[i]+" ");
+		}
 	}
 }
