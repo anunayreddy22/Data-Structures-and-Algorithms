@@ -178,6 +178,42 @@ Linear search and Binary Search:
 When we try to find an element in an array it takes O(n) time. but we can do that in O(log n) i.e Binary Search in this we break the array into two halves and then search in that half so like this it takes O(log n) time but there is also a catch for this i.e. the Array should be sorted before doing Binary search. 
 
 
+Binary Search (Iterative Approach):
+
+             while (low <= high) {
+                    int mid = low  + ((high - low) / 2);
+                    if (sortedArray[mid] < key) {
+                        low = mid + 1;
+                    } else if (sortedArray[mid] > key) {
+                        high = mid - 1;
+                    } else if (sortedArray[mid] == key) {
+                        index = mid;
+                        break;
+                    }
+
+Binary Search(Recursive Approach):
+
+
+            public int runBinarySearchRecursively(int[] sortedArray, int key, int low, int high) {
+                   int middle = low  + ((high - low) / 2);
+                                   
+                      if (high < low) {
+                          return -1;
+                      }
+                  
+                      if (key == sortedArray[middle]) {
+                          return middle;
+                      } else if (key < sortedArray[middle]) {
+                          return runBinarySearchRecursively(
+                            sortedArray, key, low, middle - 1);
+                      } else {
+                          return runBinarySearchRecursively(
+                            sortedArray, key, middle + 1, high);
+                      }
+               }
+
+
+
 
 
 
