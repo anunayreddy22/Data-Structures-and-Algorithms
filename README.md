@@ -113,6 +113,15 @@ Most Common sorting Algorithms are Bubble sort, insertion sort, Selection sort, 
 BUBBLE SORT:
 
 Bubble sort goes through the array of numbers, and looks at each pair of adjacent numbers. Bubble sort will then place the lower number on the left, towards the beginning of the array, and the higher number on the right, towards the end. This process is repeated and bubble sort will continue to loop through the array until no swaps are made, thus leaving a sorted array. In every step the highest will be moved to right most position.
+      
+               for (int i = 0; i < n - 1; i++){
+                  for (int j = 0; j < n - i - 1; j++){
+                      if (arr[j] > arr[j + 1]) {
+                          int temp = arr[j];
+                          arr[j] = arr[j + 1];
+                          arr[j + 1] = temp;
+                      }
+                  }
 
 Bubble sort is Slow
 
@@ -123,6 +132,21 @@ SELECTION SORT:
 
 The selection sort algorithm sorts an array by repeatedly finding the minimum element (considering ascending order) from the unsorted part and putting it at the beginning.
 
+               for (int i = 0; i < n - 1; i++) { 
+                     // Find the minimum element in unsorted array 
+                     int min_idx = i; 
+                     for (int j = i + 1; j < n; j++) { 
+                         if (arr[j] < arr[min_idx]) 
+                             min_idx = j; 
+                     } 
+     
+                     // Swap the found minimum element with the first 
+                     // element 
+                     int temp = arr[min_idx]; 
+                     arr[min_idx] = arr[i]; 
+                     arr[i] = temp; 
+              }
+
 Selection sort is slow
 Worst case time complexity is O(n^2).
 
@@ -130,6 +154,17 @@ INSERTION SORT:
 
 Insertion sort works by building the final, sorted array one item at a time. The algorithm will iterate through the initial array, remove one element, and place it in its proper place as a part of the sorted list.
 
+         for (int i = 1; i < n; ++i) {
+                int key = arr[i];
+                  int j = i - 1;
+                  // Move elements greater than key to one position ahead
+                  // of their current position
+                  while (j >= 0 && arr[j] > key) {
+                      arr[j + 1] = arr[j];
+                      j = j - 1;
+                  }
+                  arr[j + 1] = key;
+              }
 Insertion sort is also slow but mostly used among remaining quadratic time ones i.e. Bubble selection.
 Worst Case time complexity is O(n^2).
 
@@ -139,6 +174,64 @@ MERGE SORT:
 Merge sort is  known as a Divide and Conquer Algorithm
 
 Merge sort operates by first breaking an array into its individual components. It then ‘pairs up’ an individual with another, putting them into their proper place (sorted) with reference to each other. Merge sort then continues to pair up each sublist of numbers and sort them in the process. This is continued until there is just one list remaining — the sorted array
+
+               void sort(int[] arr,int l,int r){
+            		if(l<r){
+            			int m = (l+r)/2;
+            			//sorting firt half
+            			sort(arr,l,m);
+            			//sorting second half
+            			sort(arr,m+1,r);
+            			//merge the sorted halves
+            			merge(arr,l,m,r);
+            		}
+            	}
+            
+            	void merge(int[] arr,int l,int m,int r){
+            		// x and y will be sizes of two subarrays that are divided
+            		int x = m-l+1;
+            		int y = r-m;
+            		// create two temporary arrays
+            		int[] L = new int[x];
+            		int[] R = new int[y];
+            		
+            		// Copy data to temp arrays
+                    for (int i = 0; i <x; ++i)
+                        L[i] = arr[l + i];
+                    for (int j = 0; j <y; ++j)
+                        R[j] = arr[m + 1 + j];
+            		
+                    // Merge the temp arrays
+                    // Initial indexes of first and second subarrays
+                    int i = 0, j = 0;
+            
+                    // Initial index of merged subarray array
+                    int k = l;
+                    while (i < x && j < y) {
+                        if (L[i] <= R[j]) {
+                            arr[k] = L[i];
+                            i++;
+                        }
+                        else {
+                            arr[k] = R[j];
+                            j++;
+                        }
+                        k++;
+                    }
+            		 // Copy remaining elements of L[] if any
+                    while (i < n1) {
+                        arr[k] = L[i];
+                        i++;
+                        k++;
+                    }
+            
+                    // Copy remaining elements of R[] if any
+                    while (j < n2) {
+                        arr[k] = R[j];
+                        j++;
+                        k++;
+                    }
+            	}
 
 Powerful sorting lgorithm
 Worst case time complexity is just O(nlogn).
@@ -152,6 +245,53 @@ Then sorting the other numbers by placing them before or after the pivot number 
 At this point, the pivot number is in the correct location, and the two groups of numbers (one on each side of the pivot number) still need to be sorted.
 New pivot numbers are then chosen within the remaining subsets, and this process is repeated until no swaps are made.
 
+               int partition(int arr[], int low, int high)
+            	{
+            		int pivot = arr[high]; 
+            		int i = (low-1); // index of smaller element
+            		for (int j=low; j<high; j++)
+            		{
+            			// If current element is smaller than or
+            			// equal to pivot
+            			if (arr[j] <= pivot)
+            			{
+            				i++;
+            
+            				// swap arr[i] and arr[j]
+            				int temp = arr[i];
+            				arr[i] = arr[j];
+            				arr[j] = temp;
+            			}
+            		}
+            
+            		// swap arr[i+1] and arr[high] (or pivot)
+            		int temp = arr[i+1];
+            		arr[i+1] = arr[high];
+            		arr[high] = temp;
+            
+            		return i+1;
+            	}
+            
+            
+            	/* The main function that implements QuickSort()
+            	arr[] --> Array to be sorted,
+            	low --> Starting index,
+            	high --> Ending index */
+            	void sort(int arr[], int low, int high)
+            	{
+            		if (low < high)
+            		{
+            			/* pi is partitioning index, arr[pi] is 
+            			now at right place */
+            			int pi = partition(arr, low, high);
+            
+            			// Recursively sort elements before
+            			// partition and after partition
+            			sort(arr, low, pi-1);
+            			sort(arr, pi+1, high);
+            		}
+            	}
+
 Worst-case time complexity for quicksort is O(n²), although this is an algorithm that rarely falls into its worst-case performance, especially with minor amounts of customization. Typically the Big-O for quicksort is O(n log n). However, a worst case of O(n²) is a knock against it.
 
 
@@ -162,6 +302,18 @@ HEAP SORT:
 Heapsort is, at its core, an upgraded version of selection sort. They are similar because heapsort breaks down the input data into two groups, sorted and unsorted, and builds the sorted group one number at a time.
 
 Where they differ, is where heapsort uses, a heap, to build the unsorted group so its not blindly finding each number, one at a time. Heapsort adds the largest number from the unsorted group to the sorted group, then rebuilds the heap and repeats the process, adding the highest number to the sorted group.
+
+               public static void heapSort(int[] arr)
+            	{
+            		PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+            		// Remove the top element of the max heap and place it at the end of the array.
+            		for (int i = 0; i < arr.length; i++) {
+            			maxHeap.offer(arr[i]);
+            		}
+            		for (int i = arr.length - 1; i >= 0; i--) {
+            			arr[i] = maxHeap.poll();
+            		}
+            	}
 
 
 Heapsort is yet another powerful worst-case O(n log n) algorithm. Meaning, at worst, it still outperforms all the simple algorithms and quicksort. That being said, heapsort is not a stable sort so choose wisely.
