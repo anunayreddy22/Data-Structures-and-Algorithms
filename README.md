@@ -11,6 +11,7 @@ SPACE COMPLEXITY
 
 This measures the amount of memory an algorithm uses as a function of the length of the input. It considers both the memory needed to  store the input and any additional memory required during the execution of the algorithm.
 
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 Calculating Complexity
@@ -32,9 +33,9 @@ Calculating Space Complexity using the same sum algorithm. The space used by the
 
 Thus, this how you calculate Space and Time Complexity for algorithms, Now lets look into Asymptonic Notations which are basically used to describe the nature of complexity i.e behaviour of an algorithms as the input size increases.
 
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
-ASYMPTONIN NOTATION
+ASYMPTONIC NOTATION
 
 BIG O Notation:
 
@@ -49,13 +50,13 @@ Worst Case: The target is the last element or not present, O(n).
 
 Since Big O focuses on the worst case, the time complexity of linear search is O(n).
 
-
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Big Omega(Ω) Notation:
 
 Big Omega Focuses on lower bound of an algorithm i.e best case scenario same consider above example Now, best-time Complexity is Ω(1)
 
-
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Big Theta(Θ) Notation:
 
@@ -66,7 +67,7 @@ Average Case: On average, the target will be found halfway through the array, Θ
 So average-case time complexity is Θ(n).
 
 
-
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Now Lets Move onto Common Run times
 
@@ -77,7 +78,7 @@ Example:
 
 Accessing an element in an array by index. so where ever the element may be either at start end or middle we can acces arr[i] thats it so, its constant time so O(1).
 
-
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 2. 0(log n) -> logarthmic time
 
@@ -85,33 +86,33 @@ The algorithm's runtime grows logarithmically with the input size.
 
 Example of this Binary Search algorithm which donot search whole n but uses a technique to minimize search time from N to log n. we will learn more about this in the future.
 
-
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 3. O(n) -> Linear time
    
 The algorithm's runtime grows linearly with the input size. example searching for an element in an array which is at nth position.
 
-
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 4. O(n log n) -> Log Linear time
    
 Common in efficient sorting algorithms like merge sort and quicksort.
 
-
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 5. O(n^2) -> Quadratic time
    
 The running time grows quadratically with the input size. Simply saying if we use  nested for loops
 Simple sorting algorithms like bubble sort, insertion sort.
 
-
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 6. O(2^n) -> Exponential time
    
 The running time doubles with each additional element in the input, typical in algorithms that solve problems by brute force.
 Example: Recursive algorithms for the Fibonacci sequence.
 
-
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 7. O(n!) -> Factorial time
 
@@ -120,11 +121,12 @@ Example: Algorithms that generate all permutations of a string.
 
 This is about the fundamental concepts of Asymptonic Notation.
 
-
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Lets move on to SORTING Concept before we dig deep into Data Structures.
 
 Most Common sorting Algorithms are Bubble sort, insertion sort, Selection sort, Merge sort, Quick Sort, Heap sort.
+
 
 BUBBLE SORT:
 
@@ -144,6 +146,7 @@ Bubble sort is Slow
 Worst case time complexity is O(n^2)
 Code is available in java in SrtingAlgorithms folder.
 
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 SELECTION SORT:
 
@@ -167,6 +170,7 @@ The selection sort algorithm sorts an array by repeatedly finding the minimum el
 Selection sort is slow
 Worst case time complexity is O(n^2).
 
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 INSERTION SORT:
 
@@ -186,7 +190,7 @@ Insertion sort works by building the final, sorted array one item at a time. The
 Insertion sort is also slow but mostly used among remaining quadratic time ones i.e. Bubble selection.
 Worst Case time complexity is O(n^2).
 
-
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 MERGE SORT:
 
@@ -255,6 +259,7 @@ Merge sort operates by first breaking an array into its individual components. I
 Powerful sorting lgorithm
 Worst case time complexity is just O(nlogn).
 
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 QUICK SORT:
 
@@ -313,7 +318,7 @@ New pivot numbers are then chosen within the remaining subsets, and this process
 
 Worst-case time complexity for quicksort is O(n²), although this is an algorithm that rarely falls into its worst-case performance, especially with minor amounts of customization. Typically the Big-O for quicksort is O(n log n). However, a worst case of O(n²) is a knock against it.
 
-
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 HEAP SORT:
 
@@ -339,7 +344,7 @@ Heapsort is yet another powerful worst-case O(n log n) algorithm. Meaning, at wo
 
 Heapsort also uses a fixed amount of auxiliary space to do the sorting, which is a big plus. Merge sort on the, on the other hand, uses more auxiliary space when there is more data.
 
-
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 SEARCHING
@@ -390,6 +395,13 @@ Binary Search(Recursive Approach):
                             sortedArray, key, middle + 1, high);
                       }
                }
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+LINKED LISTS
+
+
+1. Single Linked list
 
 
 
