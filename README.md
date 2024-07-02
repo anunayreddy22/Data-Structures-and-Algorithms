@@ -12,14 +12,13 @@ SPACE COMPLEXITY
 This measures the amount of memory an algorithm uses as a function of the length of the input. It considers both the memory needed to  store the input and any additional memory required during the execution of the algorithm.
 
 
+
 Calculating Complexity
 
 To calculate complexity, we typically use the following steps:
 
 Identify the input size: Determine the parameter that affects the algorithm's performance the most (e.g., array size, number of nodes).
-
 Count the operations: Calculate the number of operations performed in terms of the input size.
-
 Simplify the expression: Remove lower-order terms and ignore constants.
 
 To calculate the complexity of an algorithm, we focus on the dominant term in the algorithm's runtime expression. The dominant term is the one that grows the fastest as the input size increases. We ignore constants and lower-order terms because they become insignificant as the input size 
@@ -32,6 +31,8 @@ Consider a simple algorithm that sums all the elements in an array. The loop run
 Calculating Space Complexity using the same sum algorithm. The space used by the algorithm consists of the input array and a few integer variables. The space for the input array is O(n).The space for the variables is O(1) (constant space).Thus, the space complexity is O(n).
 
 Thus, this how you calculate Space and Time Complexity for algorithms, Now lets look into Asymptonic Notations which are basically used to describe the nature of complexity i.e behaviour of an algorithms as the input size increases.
+
+
 
 ASYMPTONIN NOTATION
 
@@ -49,9 +50,11 @@ Worst Case: The target is the last element or not present, O(n).
 Since Big O focuses on the worst case, the time complexity of linear search is O(n).
 
 
+
 Big Omega(Ω) Notation:
 
-Big Omega Focuses on lower bound of an algorithm i.e best case scenario same consider above example Now, beasr-time Complexity is Ω(1)
+Big Omega Focuses on lower bound of an algorithm i.e best case scenario same consider above example Now, best-time Complexity is Ω(1)
+
 
 
 Big Theta(Θ) Notation:
@@ -63,6 +66,8 @@ Average Case: On average, the target will be found halfway through the array, Θ
 So average-case time complexity is Θ(n).
 
 
+
+
 Now Lets Move onto Common Run times
 
 1. O(1) -> Constant time
@@ -72,19 +77,27 @@ Example:
 
 Accessing an element in an array by index. so where ever the element may be either at start end or middle we can acces arr[i] thats it so, its constant time so O(1).
 
+
+
 2. 0(log n) -> logarthmic time
 
 The algorithm's runtime grows logarithmically with the input size.
 
 Example of this Binary Search algorithm which donot search whole n but uses a technique to minimize search time from N to log n. we will learn more about this in the future.
 
+
+
 3. O(n) -> Linear time
    
 The algorithm's runtime grows linearly with the input size. example searching for an element in an array which is at nth position.
 
+
+
 4. O(n log n) -> Log Linear time
    
 Common in efficient sorting algorithms like merge sort and quicksort.
+
+
 
 5. O(n^2) -> Quadratic time
    
@@ -92,10 +105,13 @@ The running time grows quadratically with the input size. Simply saying if we us
 Simple sorting algorithms like bubble sort, insertion sort.
 
 
+
 6. O(2^n) -> Exponential time
    
 The running time doubles with each additional element in the input, typical in algorithms that solve problems by brute force.
 Example: Recursive algorithms for the Fibonacci sequence.
+
+
 
 7. O(n!) -> Factorial time
 
@@ -128,6 +144,7 @@ Bubble sort is Slow
 Worst case time complexity is O(n^2)
 Code is available in java in SrtingAlgorithms folder.
 
+
 SELECTION SORT:
 
 The selection sort algorithm sorts an array by repeatedly finding the minimum element (considering ascending order) from the unsorted part and putting it at the beginning.
@@ -150,6 +167,7 @@ The selection sort algorithm sorts an array by repeatedly finding the minimum el
 Selection sort is slow
 Worst case time complexity is O(n^2).
 
+
 INSERTION SORT:
 
 Insertion sort works by building the final, sorted array one item at a time. The algorithm will iterate through the initial array, remove one element, and place it in its proper place as a part of the sorted list.
@@ -167,6 +185,7 @@ Insertion sort works by building the final, sorted array one item at a time. The
               }
 Insertion sort is also slow but mostly used among remaining quadratic time ones i.e. Bubble selection.
 Worst Case time complexity is O(n^2).
+
 
 
 MERGE SORT:
@@ -322,12 +341,19 @@ Heapsort also uses a fixed amount of auxiliary space to do the sorting, which is
 
 
 
+
 SEARCHING
+
 
 
 Linear search and Binary Search:
 
-When we try to find an element in an array it takes O(n) time. but we can do that in O(log n) i.e Binary Search in this we break the array into two halves and then search in that half so like this it takes O(log n) time but there is also a catch for this i.e. the Array should be sorted before doing Binary search. 
+
+When we try to find an element in an array it takes O(n) time. but we can do that in O(log n) i.e Binary Search in this we break the array into two halves and then search in that half so like this it takes O(log n) time but there is also a catch for this i.e. the Array should be sorted before doing Binary search.
+
+To understand how binary search works, imagine you are looking for a specific word in a dictionary. You could start by opening the dictionary to the middle page and looking for the word there. If the word is on that page,** you're done.** If the word is not on that page, you can then narrow down your search to either the first half of the dictionary or the second half of the dictionary.
+
+Binary search can be applied to any problem that can be expressed as a search problem over a monotonic function. This means that if you can find a way to represent your problem as a monotonic function, then you can use binary search to solve it.
 
 
 Binary Search (Iterative Approach):
@@ -342,6 +368,7 @@ Binary Search (Iterative Approach):
                         index = mid;
                         break;
                     }
+
 
 Binary Search(Recursive Approach):
 
