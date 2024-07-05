@@ -1,7 +1,23 @@
-# Data-Structures-and-Algorithms Study Guide
-Data Structures Concepts and problems topic wise problems in Leet code 
+# DSA in JAVA Study Guide
 
 
+What we will Cover in this Study guide
+
+       1. Time and Space Complexity
+       2. Sorting Algorithms
+       3. Binary Search
+       4. Linked List
+       5. Stack
+       6. Queue
+       7. Heap
+       8. Trees
+       9. Graphs
+       10. Algorithms
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Learning Time complexity and Space Complexity is First and foremost thing when we learn not only DSA but any Programming Language so that we can optimize the solution when we need.
 
 TIME COMPLEXITY
 
@@ -400,24 +416,193 @@ Binary Search(Recursive Approach):
 
 LINKED LISTS
 
+Linked list is linear data structures which consists of a group of nodes in a sequence in which we store data in linear from!. you may array is alos same right then why linked list so lets look at the differences between them now.
 
-1. Single Linked list
+In array we have to first define the size of the Array
+Let's say:-
 
+      int arr[] = new int[8]
+      Array :- [10, 20, 15, 18, 16, 10, 20, 16]
+      And each bit has it's memory address, where 1 bit size = 4, therefore 8 bit = 8 * 4 = 32 bit.
 
-
-
-
-
-
-
-
-
+But linked list is dynamic, we don't have to define it's size.
 
 
-
+![0077520a-2f86-46e2-b671-d80b66d0ce8a_1645804599 646257](https://github.com/anunayreddy22/Data-Structures-and-Algorithms/assets/156383908/8fb8ec52-5d8d-4aac-802f-935fe5a7ee1b)
 
 
 
+as we see in thiss above picture each node in a linked has two values in it
+
+      1. Data
+      2. reference to the next node
+
+Lets See Advantages and Disadvantages of Linked list
+
+
+            Advantages                                              DisAdvantages
+
+      1. Dynamic Nature                                      1. More memory usage due to address pointer
+      2. Optimal insertion & deletion                        2. Slow traversal compared to arrays
+      3. Stack's & queues can be easily implemented          3. No reverse traversal in singly linked list
+      4. No memory wastage                                   4. No random access
+
+      
+Real life Applications
+ 
+      Previous - n - next page in browser
+      Image Viewer
+      Music Player
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Types of Linked List
+
+
+Single Linked List
+
+linked list in which each node points to the next node and the last node points to null
+
+
+
+![bcf16f73-d3c8-4ec0-9157-b103fdb366ca_1645805815 6222517](https://github.com/anunayreddy22/Data-Structures-and-Algorithms/assets/156383908/b5327edd-4014-4652-bfda-6da147a38797)
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Doubly Linked List
+
+Linked list in which each node has two pointers, p and n, such that p points to the previous node and n points to the next node; the last node's n pointer points to null
+
+
+
+![c387a2cd-dd81-403a-b683-3beb0372b1c0_1645806588 8987987](https://github.com/anunayreddy22/Data-Structures-and-Algorithms/assets/156383908/0b4da2e8-56f4-4d9b-aa7b-6d4b3b4693c8)
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Circular Linked List
+
+linked list in which each node points to the next node and the last node points back to the first node
+
+
+![52dfe1b9-fbb5-4067-b045-6625b243c21a_1645806772 6599798](https://github.com/anunayreddy22/Data-Structures-and-Algorithms/assets/156383908/fe1b7d6d-9c13-4a81-a4d9-996043b5d16d)
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Now Lets Move on to How create a Linked list
+
+Code:
+
+         class Node{
+            int data;
+            int next;
+            node(int data){
+               this.data = data;
+            }
+         }
+
+         void main(){
+            Node n1 = new Node(10);
+            Node n2 = new Node(20);
+            Node.head = n1;
+            n1.next = n2;
+            n2.next = null;
+         }
+
+Output:-
+
+      --------       --------       --------
+      |  10  |  -->  |  20  |  -->  |  30  |
+      --------       --------       --------
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Now so far we Know howw to create a linked list lets see how can we traverse in a linked list
+
+Now, Lets Create a Linked list wiht 3 nodes or you can can repalce 3 with if n if the user is specifing the input  
+Next, traverse and print all the nodes data.
+
+Code:
+
+      class Node {
+          int data;
+          Node next;
+          Node(int data)
+          {
+              this.data = data;
+              this.next = null;
+          }
+      }
+
+     public class Main {
+          public static void main(String[] args) {
+              // Creating the head node
+              Node head = new Node(1);
+              Node current = head;
+      
+              // Adding more nodes using a loop
+              for (int i = 2; i <= 3; i++) {
+                  current.next = new Node(i);
+                  current = current.next;
+              }
+      
+              // Traverse the linked list
+              traverse(head);
+          }
+      
+          // Method to traverse the linked list
+          public static void traverse(Node head) {
+              Node current = head;
+              while (current != null) {
+                  System.out.print(current.data + " ");
+                  current = current.next;
+              }
+              System.out.println();
+          }
+      }
+
+Output:
+
+      Output:-
+
+         --------       --------       --------
+         |  10  |  -->  |  20  |  -->  |  30  |  -->  X
+         --------       --------       --------
+         curr^
+         
+         print:- 10
+         
+         **************************************************
+         
+         --------       --------       --------
+         |  10  |  -->  |  20  |  -->  |  30  |  -->  X
+         --------       --------       --------
+                        curr^
+         
+         print:- 10, 20
+         
+         **************************************************
+         
+         --------       --------       --------
+         |  10  |  -->  |  20  |  -->  |  30  |  -->  X
+         --------       --------       --------
+                                       curr^
+         
+         print:- 10, 20, 30
+         
+         
+         **************************************************
+         
+         --------       --------       --------
+         |  10  |  -->  |  20  |  -->  |  30  |  -->  X
+         --------       --------       --------
+                                                    curr^
+
+
+         Return answer :- 10, 20, 30
+
+
+Now Lets Manipulate Linked list like inserting and delting a node from a Linked List
 
 
 
@@ -429,4 +614,13 @@ LINKED LISTS
 
 
 
+
+
+
+
+
+
+
+
+      
 
