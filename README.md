@@ -1,18 +1,22 @@
 # DSA in JAVA Study Guide
 
 
-What we will Cover in this Study guide
+Topics Covered so far in this Study guide
 
        1. Time and Space Complexity
        2. Sorting Algorithms
-       3. Binary Search
+              1. Bubble sort
+              2. Insertions sort
+              3. Selection sort
+              4. Merge sort
+              5. Quick sort
+              6. Heap sort
+       3. Searching
+              1. Linear search
+              2. Binary Search
        4. Linked List
-       5. Stack
-       6. Queue
-       7. Heap
-       8. Trees
-       9. Graphs
-       10. Algorithms
+          1. Fast and slow pointer
+      
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -735,6 +739,28 @@ Output:
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+***Floyd's Fast Pointer and Slow pointer or Hare and tortoise:
+
+
+Let’s imagine a problem, there are 2 trains, one is faster running with 2x speed and the other is slower with x speed. They have to cover 100km distance. For sure, faster train is going to reach its destination earlier, when fast covers 100km, slower is going to cover half of its destination at that time, as it is moving at half the speed of faster train.
+
+
+Sample Code:
+
+                 while( fast!=null && fast.next!=null){
+                       fast = fast.next.next; // moving fast by 2 step
+                       slow = slow.next;
+                   }
+                   return slow;
+
+Applications:
+
+       Middle of the Linked list
+       Nth node from the end of the Linked list
+       Remove nth node from the end of the Linked list
+       Detect loop in the Linked list
+       Find the starting point of loop in the Linked list
+       Remove Loop in the Linked List
 
 
 
