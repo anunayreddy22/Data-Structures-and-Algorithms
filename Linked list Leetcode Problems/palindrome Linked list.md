@@ -35,23 +35,6 @@ Leetcode Solution:
         }
      }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Explanantion:
 
 First we will get the mid so, that we can divide a linked list into two.
