@@ -611,6 +611,15 @@ Inserting a Node into Linked List at the user specified position
 
 Exaplanation:
 
+
+
+![OIP](https://github.com/anunayreddy22/Data-Structures-and-Algorithms/assets/156383908/108c9266-f397-4b2c-a501-5cfb50509531)
+
+
+
+
+
+
               10->20->30->40->50-> Null
 
               Assume we are adding 60 at pos 3 i.e after 30
@@ -665,8 +674,65 @@ Output:
 
 Deletion of Node from a linked list:
 
+Deleting a Node at a Specified position
 
 
+![Untitleddesign](https://github.com/anunayreddy22/Data-Structures-and-Algorithms/assets/156383908/87d9a6c0-7fee-4c5b-a60e-fb6e64e2c7a9)
+
+
+
+
+
+
+
+Explanation:
+
+       Check for the base condition if the pos==0then assign head to the second node head = head.next 
+       so intial head node linked will be no longer refernced and hence will be deleted
+       if not then traverse using prev= prev.next  to the position before the pos we want to delete.
+       then now if we assign this to directly to the node ater thee node we want to delete there will(using prev.next = prev.next.next)
+       be no node referencing the node at pos hence it will be deleted
+
+
+Sample Code: 
+
+               public static void main(String[] args){
+                   .......write code for creating a linked list
+                   System.out.println(delete(head,3)) // Calling function for deleting
+              }
+
+              void delete(Node head,int pos){
+                     //base Condition
+                     if(pos==0){
+                            head = head.next;
+                     }
+                     Node prev = head;
+                     for(in ti=0;i<pos-1;i++){
+                            prev = prev.next;
+                     }
+                     prev.next = prev.next.next;
+              }
+
+
+Output:
+
+       Given :-
+              --------       --------       --------        --------         --------
+              |  5  |  -->   |  10  |  -->  | 15  |  -->    |  12  |  -->    |  14  |  -->    X
+              --------       --------       --------        --------         --------
+              
+              delete 3rd element from linked list
+              
+              --------       --------       --------        --------         --------
+              |  5  |  -->   |  10  |  -->  | 15  | |-X-    |  12   | |----> |  14  |  -->    X
+              --------       --------       --------|       --------  |      --------
+               
+                                                    |-----------------|
+              Final anser 5->10->15->14
+
+              
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
