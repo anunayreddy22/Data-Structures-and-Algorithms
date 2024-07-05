@@ -416,7 +416,7 @@ Binary Search(Recursive Approach):
 
 LINKED LISTS
 
-Linked list is linear data structures which consists of a group of nodes in a sequence in which we store data in linear from!. you may array is alos same right then why linked list so lets look at the differences between them now.
+Linked list is linear data structures which consists of a group of nodes in a sequence in which we store data in linear from!. you may think that array is also same right then why we need linked list so to get that doubt clarified lets look at the differences between them now.
 
 In array we have to first define the size of the Array
 Let's say:-
@@ -601,8 +601,73 @@ Output:
 
          Return answer :- 10, 20, 30
 
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Now Lets Manipulate Linked list like inserting and delting a node from a Linked List
+
+
+Inserting a Node into Linked List at the user specified position
+
+
+Exaplanation:
+
+              10->20->30->40->50-> Null
+
+              Assume we are adding 60 at pos 3 i.e after 30
+              
+              Base Condition 
+              
+              if(pos==0) check if we are adding at first i.e at head then
+              newnode.next = head  (After adding newlink only we should Brake the older Link)
+              head = newnode  (assign newnode as head node)
+              return;
+              
+              if not at first pos then all other follwoing code will handle it
+              assign prev = head and then contninue for tarversing the linked list
+              Traverse upto pos-1 (prev = prev.next)
+              (After adding newlink only we should Brake the older Link)
+              we will then point new node assume 60 to 40  i.e newnode.next = prev.next
+              and the point prev to newnode i.e prev.next = newnode 
+
+
+Sample Code:
+
+              public static void main(String[] args){
+                   .......code for creadting a linked list
+                   System.out.println(insert(60,head,3)) // Calling function for inserting
+              }
+
+              void insert(int data, Node head, int pos){
+                     Node newNode = new Node(data);
+
+                     // Base Condition
+                     if(pos==0){
+                            newnode.next.head;
+                            head = newnode;
+                            return;
+                     }
+                     Node prev = head;
+                     for(int i=0;i<pos-1;i++){
+                            prev = prev.next;
+                     }
+                     newnode.next = prev.next;
+                     prev.next = newnode;
+                     
+              }
+
+
+Output:
+
+              intially:10->20->30->40->50->null
+              after insertion: 10>20->30->60->40->50->null;
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Deletion of Node from a linked list:
+
+
+
+
 
 
 
