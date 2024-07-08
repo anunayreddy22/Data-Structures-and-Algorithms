@@ -763,9 +763,9 @@ Applications:
        Remove Loop in the Linked List
 
 
+Dummy Node:
 
-
-
+A node which contains bogus value (-1) Create a dummy node you can get head easily just by returning dummy.nxt.
 
 
 
