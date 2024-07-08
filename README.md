@@ -14,9 +14,9 @@ Topics Covered so far in this Study guide
        3. Searching
               1. Linear search
               2. Binary Search
-       4. Linked List
+       4. Linked List (problems 92, 19 tuesdday)
           1. Fast and slow pointer
-      
+          
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 
