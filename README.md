@@ -767,15 +767,62 @@ Dummy Node:
 
 A node which contains bogus value (-1) Create a dummy node you can get head easily just by returning dummy.nxt.
 
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Stack
+
+A Stack is a linear data structure that follows a particular order in which the operations are performed. Stack follows LIFO. LIFO implies that the element that is inserted last, comes out first.
 
 
 
 
 
+![java-stack-data-structure](https://github.com/anunayreddy22/Data-Structures-and-Algorithms/assets/156383908/c2db5f2c-d350-49b1-8c6e-1974bb7618e9)
 
 
 
+Operations on Stack
 
+              Push: Adds an element to the top of the stack.
+              Pop: Removes the top element from the stack.
+              Peek: Returns the top element without removing it.
+              IsEmpty: Checks if the stack is empty.
+              IsFull: Checks if the stack is full (in case of fixed-size arrays).
+
+Implemnetation of Stack:
+
+       
+       public class Samplecode {
+           public static void main(String[] args) {
+               // Create a new stack
+               Stack<Integer> stack = new Stack<>();
+       
+               // Push elements onto the stack
+               stack.push(1);
+               stack.push(2);
+               stack.push(3);
+               stack.push(4);
+       
+               // Pop elements from the stack
+               while(!stack.isEmpty()) {
+                   System.out.println(stack.pop());
+               }
+           }
+       }
+              
+Applications of Stack 
+
+              Recursion
+              Expression Evaluation and Parsing
+              Depth-First Search (DFS)
+              Undo/Redo Operations
+              Browser History
+              Function Calls
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Monotonic Stack
 
 
 
