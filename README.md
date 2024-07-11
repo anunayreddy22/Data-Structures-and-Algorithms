@@ -16,6 +16,9 @@ Topics Covered so far in this Study guide
               2. Binary Search
        4. Linked List (problems 92, 19 tuesdday)
           1. Fast and slow pointer
+       5. Stack
+       6.Queue
+         1. Priority Queue
           
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
