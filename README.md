@@ -832,12 +832,97 @@ A Monotonic stack is a variation of the traditional stack data structure that ma
 When to use Monotonic Stack Technique ?
 
 
-Next greater Element
-Next smaller Element
-Previous greater Element
-Previous smaller Element
-Lexicographically Smallest/Greatest
-Histogram Related Problems left and right boundaries for each bar
+       Next greater Element
+       Next smaller Element
+       Previous greater Element
+       Previous smaller Element
+       Lexicographically Smallest/Greatest
+       Histogram Related Problems left and right boundaries for each bar
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Queue:
+
+A datstrcuture which follows FIFO order i.e first in first Out. the element which comes first goes out first  
+
+![OIP](https://github.com/anunayreddy22/Data-Structures-and-Algorithms/assets/156383908/43aaacc3-2960-4742-866b-9dedfd331efa)
+
+
+              a stack’s push function is similar to a queue’s enqueue function
+              a stack’s pop function is similar to a queue’s dequeue function
+              size and isEmpty are really helpful functions to have around in general
+
+Applications of Queue
+
+       Task scheduling in operating systems
+       Data transfer in network communication
+       Simulation of real-world systems (e.g., waiting lines)
+       Priority queues for event processing queues for event processing
+
+Implementing and Traversing Queue:
+
+Sample Code:
+
+              public class Main {
+              
+                  public static void main(String args[])
+                  {
+                      Queue<String> pq = new PriorityQueue<>();
+              
+                      pq.add("Anunay");
+                      pq.add("Reddy");
+                      pq.add("Kallem");
+              
+                      Iterator iterator = pq.iterator();
+              
+                      while (iterator.hasNext()) {
+                          System.out.print(iterator.next() + " ");
+                      }
+                  }
+              }
+
+
+
+Queue Implementation using Linked List class
+
+LinkedList is a class which is implemented in the collection framework which inherently implements the linked list data structure. It is a linear data structure where the elements are not stored in contiguous locations and every element is a separate object with a data part and address part. The elements are linked using pointers and addresses. Each element is known as a node. Due to the dynamicity and ease of insertions and deletions, they are preferred over the arrays or queues. Let’s see how to create a queue object using this class.
+
+
+Code: 
+
+
+       class Main{
+
+           public static void main(String args[])
+           {
+               Queue<Integer> ll = new LinkedList<Integer>();
+       
+               ll.add(10);
+               ll.add(20);
+               ll.add(15);
+       
+               // Printing the top element and removing it from the LinkedList container
+               System.out.println(ll.poll());
+       
+               // Printing the top element again
+               System.out.println(ll.peek());
+           }
+       }
+
+Deque:
+
+Deque, which stands for Double Ended Queue, is a special type of queue that allows adding and removing elements from both front and rear ends.
+
+
+
+![anod](https://github.com/user-attachments/assets/7e886ade-df12-454e-b9d0-26343cdbfaca)
+
+
+
+
+
+
+
 
 
 
