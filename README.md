@@ -824,7 +824,18 @@ Applications of Stack
 
 Monotonic Stack
 
+A Monotonic stack is a variation of the traditional stack data structure that maintains either a strictly increasing or strictly decreasing order of elements. Unlike a regular stack, where elements can be inserted and removed freely, a monotonic stack enforces a specific order to its elements.
+
+When to use Monotonic Stack Technique ?
 
 
-      
+Next greater Element
+Next smaller Element
+Previous greater Element
+Previous smaller Element
+Lexicographically Smallest/Greatest
+Histogram Related Problems left and right boundaries for each bar
+
+
+
 
