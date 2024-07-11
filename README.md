@@ -15,10 +15,11 @@ Topics Covered so far in this Study guide
               1. Linear search
               2. Binary Search
        4. Linked List (problems 92, 19 tuesdday)
-          1. Fast and slow pointer
-       5. Stack
+              1. Fast and slow pointer
+       5. Stack (2 monotonic stack problems left)
        6.Queue
-         1. Priority Queue
+              1. ArrayDeque
+              2. Priority Queue
           
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -920,6 +921,15 @@ Deque, which stands for Double Ended Queue, is a special type of queue that allo
 
 
 
+It hass methods like
+
+
+              add, addFirst, addLast  or instaed of add use offer
+              poll,pollFirst,pollLast
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Priority Queue:
 
 
 
