@@ -840,6 +840,16 @@ When to use Monotonic Stack Technique ?
        Lexicographically Smallest/Greatest
        Histogram Related Problems left and right boundaries for each bar
 
+
+The typical Template for monotonous increase stack:
+          
+               for (int i = 0; i < A.length; i++) {
+                   while (!in_stk.isEmpty() && in_stk.peek() > A[i]) {
+                       in_stk.pop();
+                   }
+                   in_stk.push(A[i]);
+               }
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Queue:
