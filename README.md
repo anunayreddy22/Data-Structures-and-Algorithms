@@ -19,7 +19,7 @@ Topics Covered so far in this Study guide
        5. Stack (2 monotonic stack problems left)
        6.Queue
               1. ArrayDeque
-              2. Priority Queue
+       7. Trees
           
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -939,11 +939,150 @@ It hass methods like
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Priority Queue:
+Trees
+
+Tree is a type of non-linear data strucutre. in which a single node is connected to multiple nodes
+
+
+![3dc11e21-79a9-4072-bcf0-4ab8ba8ce352_1645958902 061262](https://github.com/user-attachments/assets/2f5a66a5-03fc-4da7-908a-c28936d5c5d1)
+
+
+
+Most used terms in trees let us get to know the intro of them first!
+
+       NODE: Node :- which hold's data eg:- (1)
+       Root :- Where tree start OR top node
+       Children :- it is a node of a parent node. E.g :- (2) is a child of node (1)
+       Parent :- E.g (1) is parent of node (2) & node (3)
+       Siblings :- whose parent is same. E.g (4) & (5) are sibling's because there parent is same i.e. (2)
+       Ancestor :- Going up from a child or leaf
+       Descendant :- Going down from top root
+       Leaf :- is that who don't have any child's E.g (4) & (5) & (6) & (7) are leaf node
+
+
+Now, we got to know what a tree is lets look into what a Binary tree is?
+
+A tree is called a binary tree if it has 0,1 or 2 children i.e root node, left child, right child.
+
+There are different types of Binary trees they are
+
+1. full binary tree: A binary tree in which each node have two children and all the leaf nodes are on the same level.
+
+
+![98b57f54-b521-40b0-a67a-89a829684ff8_1645960022 0994654](https://github.com/user-attachments/assets/dc3bafdf-e4d1-43d3-b33c-bd0224a0055c)
+
+
+2.  Strict Binary tree:  A binary tree is called strict binary tree if each node has exactly teo children or no children.
+
+![6f7309aa-6534-4ae0-a8ad-5972eda746f2_1645959947 778895](https://github.com/user-attachments/assets/6d2f009d-983e-40de-b461-e4e97bd91aae)
+
+3. Complete Binary Tree:  A binary tree in which all the levels are completely filled except possibly the lowest one, which is filled from the left.
+
+![8482807f-10da-4e57-9fd1-ce70427b609d_1645960113 655121](https://github.com/user-attachments/assets/f714aba1-616a-493b-81e0-32c77077b665)
+
+4. Skew Binary Tree:  A binary tree in which every parent has exactly one child.
+
+![0659d046-e8a3-4056-8096-d3121676e3d4_1645960161 5585117](https://github.com/user-attachments/assets/3e98fc09-e496-41c0-83ad-00cdfdff2879)
+
+
+Lets a build whihc looks like this using Java program
+
+![4fd86740-daa7-483b-8d4c-51aa4dce06b8_1646051452 4814074](https://github.com/user-attachments/assets/b554f056-2c3c-4331-aa5e-3370d2cf1cf4)
+
+Java Code:
+
+              import java.util.*;
+              class Solution{
+                     class node{
+                     int data;
+                     node left;
+                     node right;
+                     public node(int d){
+                       this.data = d;
+                       this.left = null;
+                       this.right = null;
+                     }
+              }
+
+              public static void main buildtree(node root){
+                 Scanner sc = new Scanner(System.in);
+                 System.out.println("Enter Data");
+                 int data = sc.nectInt();
+
+                 root = new node(data);
+                 if(data== -1){
+                    return null;
+                 }
+
+                 SOP("Enter data for inserting left"+ data);
+                 root.left = buildtree(root.left);
+                 SOP("Enter data for inserting right"+ data)
+                 root.right = buildtree(root.right);
+                 return root;
+              }
+
+              public static void main(String[] args){
+                  node root = null;
+                  root = buildtree(root);
+                  return;
+               }
+       }
+
+
+Lets see how the recursive call is taking place above:
+
+
+![442dc43a-357e-47fa-8831-0e3a6b80fbe8_1646051823 0160375](https://github.com/user-attachments/assets/225af242-e5b3-44e8-992c-87121b477170)
+
+
+Now if we need to print level by level then
+
+              First we put (1) in the queue as it's just a root. After that we put it's child in the queue (2) & (3) & pop (1) from the queue & put into arraylist.
+              
+              Similarly we put (2) left & right 1st in the queue i.e. (4) & (5) then we put (3) left & right in the queue i.e. (6) & (7)
+              
+              Now we check for (4) left & right which is null, similar for (5), (6), (7) which are null as well. We pop them from the queue & put into the arraylist.
+              
+              Time Complexity :- BigO(N)
+              
+              Space Complexity :- BigO(N)
+
+
+=> As you see we traverse Iteratively using Queue & get the answer in our list of arraylist.
+
+
+![e6f9bce8-3644-4190-a6e9-173fdd1c890b_1646054081 4701512](https://github.com/user-attachments/assets/cbb5371d-7ccd-463d-8b4b-48facd1e9c94)
+
+
+Code:
+
+              class Solution {
+                  public List<List<Integer>> levelOrder(TreeNode root) {
+                      List<List<Integer>> res = new LinkedList<>();
+                      Queue<TreeNode> q = new LinkedList<>();
+                      
+                      if(root == null) return res;
+                      
+                      q.offer(root);
+                      
+                      while(!q.isEmpty()){
+                          int len = q.size();
+                          List<Integer> subres = new LinkedList<>();
+                          
+                          for(int i = 0; i < len; i++){
+                              if(q.peek().left != null) q.offer(q.peek().left);
+                              if(q.peek().right != null) q.offer(q.peek().right);
+                              
+                              subres.add(q.poll().val);
+                          }
+                          res.add(subres);
+                      }
+                      return res;
+                  }
+              }
 
 
 
 
 
-
-
+              
